@@ -13,6 +13,9 @@ const yellowTripDataFiles = [
 ]
 
 const execute = async () => {
+  await fs.rm(STATIC_DIRECTORY, { recursive: true, force: true })
+  await fs.mkdir(STATIC_DIRECTORY)
+
   const executeSingle = async (name) => {
     const buffer = (await got.get(`${CLOUDFRONT_BUCKET_DIRECTORY}${name}`))
       .rawBody
