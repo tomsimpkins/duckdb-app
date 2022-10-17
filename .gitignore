@@ -4,3 +4,4 @@ node_modules/
 dist/
 .codesandbox/
 yarn-error.log
+static/
